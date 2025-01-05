@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int te;
+    cin>>te;
+    while(te--){
+       long long int n,m;
+        cin>>n>>m;
+        if(m>n)
+           cout<<m+1<<endl;
+           else
+            cout<<n+1<<endl;
+    }
+}
