@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+  long long int n,k;
+  cin>>n>>k;
+  vector<long long int>divisor;
+  for(long long int i=1;i<=sqrt(n);i++){
+    if(n%i==0){
+          divisor.push_back(i);
+          if(i!=n/i)
+          divisor.push_back(n/i);
+    }
+  }
+  if(k>divisor.size())
+               cout<<-1;
+  else{
+        sort(divisor.begin(),divisor.end());
+    cout<<divisor[k-1];
+  }
+}
