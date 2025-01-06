@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int nextprime(int n,vector<bool>primet){//next prime
+    bool ch=primet[n];
+    if(ch) return n;
+    while(!ch){
+        n++;
+        if(primet[n])ch=true;
+    }
+    return n;
+}
+int main(){
+    ///////
+     vector<bool>primet(2e5+1,true); //prime vector;
+     primet[0]=primet[1]=false;
+
+     for(int i=2;i*i<=2e5;i++){
+        if(primet[i]){
+            for(int j=i*i;j<=2e5;j+=i){
+                primet[j]=false;
+            }
+        }
+     }
+     //////
+    int n,m;
+    cin>>n>>m;//input n,m;
+    int matrix[n][m];
+    int next[n][m];
+  int fsum=2e5;
+    for(int i=0;i<n;i++){
+        int sum=0;
+        for(int j=0;j<m;j++){
+               int le;
+               cin>>le;
+                next[i][j]=0;
+                matrix[i][j]=le;
+                next[i][j]=nextprime(le,primet)-le;
+                sum+=next[i][j];
+        }
+        if(sum<fsum)fsum=sum;
+    }
+
+    for(int i=0;i<m;i++){
+            int sum=0;
+        for(int j=0;j<n;j++){
+            sum+=next[j][i];
+        }
+        if(sum<fsum)
+        fsum=sum;
+
+    }
+   cout<<fsum;
+}
