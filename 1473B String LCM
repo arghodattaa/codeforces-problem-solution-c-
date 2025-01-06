@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+    int te;
+    cin>>te;
+    while(te--){
+   string s,t;
+   cin>>s>>t;
+
+   if(s.size()==t.size()){
+      if(s==t)cout<<s<<endl;
+      else cout<<-1<<endl;
+      continue;
+   }
+
+   if(s.size()<t.size()) swap(s,t);
+   int ss=s.size(),tt=t.size();
+   int len=(ss*tt)/__gcd(ss,tt);
+
+   char ans[len];
+   for(int i=0;i<len;i++){
+
+    ans[i]=(char)t[i%tt];
+   }
+   bool chak=true;
+   for(int i=0;i<len;i++){
+    if(ans[i]!=s[i%ss]){
+
+        cout<<-1<<endl;
+        chak =false;
+        break;
+    }
+   }
+   if(chak){
+    for(char x:ans){
+        cout<<x;
+    }
+    cout<<endl;
+   }
+
+        }
+    }
+
+ 
