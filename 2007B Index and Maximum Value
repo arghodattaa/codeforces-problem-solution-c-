@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+    int te;
+    cin>>te;
+    while(te--){
+        int n,m;
+        cin>>n>>m;
+        int vc;
+        long long int big=-1;
+        for(int i=0;i<n;i++){
+            cin>>vc;
+            if(vc>big)big=vc;
+        }
+        char c;
+        int l,r;
+        for(int i=0;i<m;i++){
+            cin>>c>>l>>r;
+            if(l<=big && big<=r){
+                if(c=='-')big--;
+                else big++;
+            }
+             cout<<big<<" ";
+        }
+       cout<<endl;
+
+    }
+}
