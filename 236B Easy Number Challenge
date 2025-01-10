@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int divisor(int x){
+    int xx=x;
+   int ans=1;
+    for(int i=2;i*i<=xx;i++){
+            int de=1;
+        while(x%i==0){
+            de++;
+            x/=i;
+        }
+        ans*=de;
+    }
+    if(x>1)ans*=2;
+   return ans;
+}
+int main(){
+   int a,b,c;
+   cin>>a>>b>>c;
+   long long int ans=0;
+   for(int i=a;i>=1;i--){
+    for(int j=b;j>=1;j--){
+        for(int k=c;k>=1;k--){
+            ans+=divisor(i*j*k);
+            ans%=1073741824;
+        }
+    }
+   }
+   cout<<ans;
+}
