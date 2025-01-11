@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+  long long int a,b;
+  cin>>a>>b;
+  if(a==b){
+        cout<<0;
+        return 0;
+  }
+  int arr[3]={2,3,5};
+  vector<int>ans(6,0);
+  for(int i=0;i<3;i++){
+    while(a%arr[i]==0){
+        ans[arr[i]]++;
+        a/=arr[i];
+    }
+  }
+  for(int i=0;i<3;i++){
+    while(b%arr[i]==0){
+        ans[arr[i]]--;
+        b/=arr[i];
+    }
+  }
+  if(a!=b){
+    cout<<-1;
+    return 0;
+  }
+  int anss=0;
+  for(int i=0;i<3;i++){
+    anss+=abs(ans[arr[i]]);
+  }
+  cout<<anss;
+}
