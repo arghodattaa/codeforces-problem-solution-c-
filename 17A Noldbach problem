@@ -1,0 +1,27 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+int n,k;
+cin>>n>>k;
+vector<bool>primet(n+1,true);
+primet[0]=primet[1]=false;
+
+for(int i=2;i*i<=n;i++){
+        if(primet[i]==true){
+              for(int j=i*i;j<=n;j+=i)primet[j]=false;
+        }
+}
+vector<int>prime;
+for(int i=2;i<=n;i++){
+    if(primet[i])prime.push_back(i);
+}
+int coun=0;
+ for(int i=0;i<prime.size()-1;i++){
+            int p= prime[i]+prime[i+1]+1;
+        if(primet[p]==true &&p<=n )coun++;
+    }
+
+  if(coun>=k)cout<<"YES";
+ else cout<<"NO";
+}
