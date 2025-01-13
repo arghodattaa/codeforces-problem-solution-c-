@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main(){
+     int te;cin>>te;
+     while(te--){
+        int n,k;
+        cin>>n>>k;
+        int arr[n];
+        int sn=1,bn=n;
+        int s=k;
+        for(int i=1;i<=n;i++){
+            if(i==s){
+                cout<<sn<<" ";
+                sn++; s+=k;
+            }
+            else{
+                cout<<bn<<" ";
+                bn--;
+            }
+        }
+         cout<<endl;
+
+
+
+     }
+}
