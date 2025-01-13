@@ -1,0 +1,16 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+   int te;
+   cin>>te;
+   while(te--){
+    int a,b;
+    cin>>a>>b;
+    long int sum=a+b;
+   int total= sum/4;
+    cout<<min(total,min(a,b))<<endl;
+
+    }
+   }
+ 
