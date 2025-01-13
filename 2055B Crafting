@@ -1,0 +1,40 @@
+
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+  int te;
+  cin>>te;
+  while(te--){
+    int n;
+    cin>>n;
+     int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    long long int a;
+    bool ch=false;
+    bool nogive=false;
+    vector<long long int>need;
+    long long int give =1e9+5;
+    for(int i=0;i<n;i++){
+        cin>>a;
+        if(ch)continue;
+        if(need.size()>0 && nogive)continue;
+        if(arr[i]<a){
+                need.push_back(a-arr[i]);
+                if(need.size()>1)
+                              ch=true;
+        }else{
+           if((arr[i]-a)<give)give=arr[i]-a;
+           if(give==0 )nogive=true;
+        }
+    }
+    if(need.size()==0)cout<<"YES"<<endl;
+    else if(ch)cout<<"NO"<<endl;
+    else if(need.size()==1 && nogive)cout<<"NO"<<endl;
+    else if(need[0]<=give)cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+  }
+}
+
