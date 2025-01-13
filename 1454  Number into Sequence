@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+int te;cin>>te;
+while(te--){
+    long long int n;
+    cin>>n;
+   int nofd=0;
+   int noftempd;
+   long long int devisor,tempd;
+   long long int x;
+   bool ch=false;
+   for(long long int i=2;i*i<=n;i++){
+        x=n;
+        noftempd=0;
+    while(x%i==0){
+        if((x/i)%i==0){
+            noftempd++;
+            x/=i;
+            tempd=i;
+
+        }else break;
+
+    }
+    if(noftempd>nofd){
+        nofd=noftempd;
+        devisor=tempd;
+    }else ch=true;
+   }
+
+   if(nofd==0){
+    cout<<1<<endl;
+    cout<<n<<endl;
+   }else {
+       cout<<nofd+1<<endl;
+       while(n % devisor==0){
+            n/=devisor;
+       if(n%devisor==0)
+              cout<<devisor<<" ";
+        else
+            cout<<n*devisor;
+
+       }
+    cout<<endl;
+   }
+
+}
+}
+
+ 
