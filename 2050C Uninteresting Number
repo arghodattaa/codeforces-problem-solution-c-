@@ -1,0 +1,41 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+   int te;
+   cin>>te;
+   while(te--){
+    string s;
+    cin>>s;
+    int tow=0;
+    int three=0;
+    int sum=0;
+    for(int i=0;i<s.size();i++){
+            sum+=(int)s[i]-48;
+            if(s[i]=='2')tow++;
+            else if(s[i]=='3')three++;
+            sum%=9;
+
+    }
+    if(sum%9==0)cout<<"YES"<<endl;
+    else{
+            int ch=1;
+           for(int i=0;i<=three;i++){
+               for(int j=0;j<=tow;j++){
+                   int temp=sum;
+
+                   temp+=i*6+ j*2;
+
+                   if(temp%9==0){
+                        ch=0;break;
+                        }
+               }
+               if(ch==0)break;
+           }
+
+        if(ch==0)cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+
+   }
+   }
