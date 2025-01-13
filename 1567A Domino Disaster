@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int te;
+    cin>>te;
+    while(te--){
+        string s;int n ;
+
+        cin>>n>>s;
+        for(int k=0;k<n;k++){
+                if(s[k]=='U')s[k]='D';
+                else if(s[k]=='D')s[k]='U';
+        }
+        cout<<s<<endl;
+
+    }
+}
