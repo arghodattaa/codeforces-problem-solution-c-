@@ -1,0 +1,37 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;cin>>n;
+    int pr[240];
+   int co=0;
+   vector<bool>prime(1509,true);
+   prime[1]=false;
+   for(int i=2;i*i<=1500;i++){
+        if(prime[i]==true){
+    for(int j=i*i;j<=1500;j+=i){
+        prime[j]=false;
+
+    }
+   }
+   }
+   for(int i=1;i<=1500;i++){
+    if(prime[i]==true){
+       pr[co]=i;
+       co++;
+    }
+}
+
+ int ans=0;
+ for(int i=1;i<=n;i++){
+        int num=0;
+    for(int j=0;j<239;j++){
+        if(i%pr[j]==0)num++;
+      if(num>2)break;
+    }
+    if(num==2)ans++;
+ }
+ cout<<ans;
+
+
+ }
