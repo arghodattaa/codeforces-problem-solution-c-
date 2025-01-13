@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int te;
+    cin>>te;
+    while(te--){
+        int n, a,b;
+        cin>>n>>a>>b;
+        int x= max(a,b)-min(a,b)-1;
+
+        if(x%2==0)cout<<"NO"<<endl;
+          else cout<<"YES"<<endl;
+    }
+    return 0;
+}
