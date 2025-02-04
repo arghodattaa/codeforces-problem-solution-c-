@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te;
+   cin>>te;
+   while(te--){
+    int n,k;
+    cin>>n>>k;
+    int ans=-1;
+    if(n==k){
+            int a;
+            int chak=1;
+            bool chak2 = true;
+        for(int i=1 ; i<=n;i++){
+            cin>>a;
+            if(i%2==0 && chak2){
+                if(a!=chak){
+                        chak2=false;
+                        ans= chak;
+                }
+                chak++;
+            }
+        }
+        if(ans==-1)ans=n/2 +1;
+    }
+    else{
+        int use =n - ( k-2 );
+        int a ;
+        bool chak2 = true;
+        for(int i=1 ;i<=n ;i++){
+            cin>>a;
+            //if(i>1)
+            if( i>1 && i<=use && chak2){
+                if(a!=1){
+
+                        chak2= false;
+                }
+            }
+        }
+        if(chak2) ans=2;
+        else ans=1;
+    }
+    cout<<ans<<"\n";
+   }
+}
