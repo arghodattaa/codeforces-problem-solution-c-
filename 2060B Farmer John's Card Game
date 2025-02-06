@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+#include<algorithm>
+#include<map>
+#include<vector>
+int main(){
+int te;
+cin>>te;
+while (te--){
+     int n, m;
+     cin >> n >> m;
+     vector< vector<int> >arr(n+1,vector<int>(m+1));
+     //int arr[n+1][m+1];// +1 to use i=1 index
+     bool Chak=false;
+     for(int i=1; i<=n; i++){
+            for(int j=1; j<=m; j++)
+                       cin>>arr[i][j];
+        sort(arr[i].begin() , arr[i].end());
+        for(int j=1; j<m; j++)
+                       if(arr[i][j+1] - arr[i][j]!=n)Chak=true;
+     }
+   if(Chak){
+    cout<<-1<<endl;
+    continue;
+   }
+     map < int, int >mp1;
+
+     for(int i=1,j=1; i<=n; i++)
+               mp1[ arr[i][j] ] = i;
+
+    map< int , int > ::iterator it = mp1.begin();
+
+
+        while(it != mp1.end()){
+            cout<<it->second<<" ";
+            it++;
+        }
+        cout<<endl;
+     }
+
+}
+ 
