@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+#include<map>
+int main(){
+    int te;
+    cin>>te;
+    while(te--){
+        int n;
+        cin>>n;
+        map< int , int > mp;
+
+        int aa;
+        for(int i=0 ;i<n; i++)
+             for(int j=0 ;j<n; j++){
+                  cin>>aa;
+                  if(mp[i-j]> aa && aa<0){
+                      mp[i-j] = aa;
+                  }
+             }
+             int ans= 0;
+    map< int , int > :: iterator it= mp.begin();
+      while(it != mp.end()){
+            ans += -it->second ;
+        it++;
+      }
+      cout<<ans<<endl;
+    }
+}
