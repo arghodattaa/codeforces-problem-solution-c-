@@ -1,0 +1,48 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+     int te;
+     cin>>te;
+     while(te--){
+        int n, m, k;
+        cin>>n>>m>>k;
+        if(n-k== 0 || n-k >1){
+            int a;
+
+            for(int i=0;i<m; i++)
+                        cin>>a;
+            for(int i=0; i<k; i++)
+                        cin>>a;
+            if(n-k==0)
+                for(int i=0; i<m; i++)
+                        cout<<1 ;
+            else
+                for(int i=0; i<m; i++)
+                        cout<<0 ;
+                       // cout<<"fast"<<endl;
+            }else {
+                 int a;
+                 vector<int >mm(m);
+
+                 for(int i=0;i<m; i++){
+                    cin>>a;
+                    mm[i]=a;
+                 }
+
+                vector<int >qq(k);
+                int mis=1;
+                 for(int i=0; i<k; i++){
+                     cin>>a;
+                    qq[i]=a;
+                    if(mis==a)mis++;
+                 }
+
+              for(int i=0 ;i<m ; i++){
+                if(mm[i]== mis) cout<<1;
+                else cout<<0;
+              }
+            }
+            cout<<endl;
+     }
+}
