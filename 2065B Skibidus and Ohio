@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+    int te;
+    cin>>te;
+    while(te--){
+        string s;
+        cin>>s;
+        bool chak= true;
+        for( int i =0; i<s.size()-1 ; i++){
+            if(s[i]==s[i+1]){
+                chak = false ;
+                break;
+            }
+        }
+        if(chak)cout<<s.size();
+        else cout<<1;
+        cout<<"\n";
+    }
+}
