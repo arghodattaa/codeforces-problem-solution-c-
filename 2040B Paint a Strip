@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int te;
+    cin>>te;
+    while(te--){
+        int n;
+        cin>>n;
+        int ans= 1;
+        int sum =1;
+        int f = 1;
+        int l = 1;
+        while(true){
+            if(n <= l) {
+                cout<<ans;
+                break;
+            }else{
+                f = l;
+                sum = l;
+                ans++;
+            }
+            sum++;
+           //cout<<"FF= "<<l<<endl;
+            l =  (sum * 2) ;
+           //cout<<"LL= "<<l<<endl;
+        }
+        cout<<"\n";
+    }
+}
