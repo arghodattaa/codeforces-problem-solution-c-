@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+#include<algorithm>
+int main(){
+    int te;
+    cin>>te;
+    while (te--){
+        string s;
+        cin>>s;
+        int x = s.size();
+        if(x==1)cout<<-1;
+        else if (x==2){
+            if(s[0]==s[1])cout<<s;
+            else cout<<-1;
+        }
+        else {
+                bool chak = false;
+
+            for(int i=0; i<x-2 ; i++){
+                for( int j=i; j<i+2; j++){
+                    if(s[j]==s[j+1]){
+                        cout<<s[j]<<s[j+1];
+                        chak = true;
+                        break;
+                    }
+                }
+                if( chak ) break;
+                if( s[i] != s[i+1] && s[i] != s[i+2] && s[i+1] != s[i+2]){
+                    cout<<s[i]<<s[i+1]<<s[i+2];
+                    chak = true;
+                    break;
+                }
+
+            }
+            if(chak == false ) cout<<-1;
+        }
+        cout<<"\n";
+    }
+}
