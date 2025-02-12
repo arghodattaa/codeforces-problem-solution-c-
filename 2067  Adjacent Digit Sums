@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te;
+   cin>>te;
+   while (te--){
+    int x, y;
+    cin>>x>>y;
+     if( x>y){
+        if((x-y+1)%9==0){
+            cout<<"YES\n";
+            continue;
+        }
+     }
+    if( y-x ==1){
+            cout<<"YES\n";
+            continue;
+    }
+    cout<<"NO\n";
+   }
+}
