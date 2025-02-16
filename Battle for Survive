@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main(){
+  int te;
+  cin>>te;
+  while(te--){
+    long long int sum = 0;
+    long long int a;
+    int n;
+    cin>>n;
+    for( int i= 1; i<=n-2 ; i++){
+        cin>>a;
+        sum += a ;
+    }
+    cin>>a;
+    a -= sum ;
+    long long int ans ;
+    cin>> ans;
+    ans -= a;
+    cout<<ans<<"\n";
+  }
+}
