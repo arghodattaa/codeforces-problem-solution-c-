@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+#include<map>
+int main(){
+   int te; cin>>te;
+   while( te --){
+    int n ; cin>>n ;
+    int arr[n];
+    map<int , int >mp;
+    for( int i = 0 ; i < n ; i++){
+        cin>>arr[i];
+        mp[ arr[i] ] ++;
+    }
+    int len = -1;
+    int ansl , ansr;
+    int l = 0, r = 0;
+    while ( l< n && r < n ){
+        if( mp[ arr[r] ] == 1){
+
+            if( r-l > len ){
+                ansl = l;
+                ansr = r;
+                len = r-l;
+            }
+             r++;
+        }else if( mp [ arr[r] ] >1){
+           l = ++r;
+        }
+    }
+    if(len == -1) cout<<0<<"\n";
+    else {
+        cout<<ansl+1<<" "<<ansr+1<<"\n";
+    }
+   }
+}
