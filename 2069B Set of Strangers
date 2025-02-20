@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+#include<map>
+int main(){
+
+  int te ; cin>>te;
+  while( te--){
+    int n , m;
+    cin>> n >> m ;
+    int arr[m];
+    cin>>arr[0];
+    map< int , int >mp;
+    mp[ arr[0] ] ;
+    for( int j = 1; j<m ; j++){
+        cin>>arr[j];
+        mp[ arr[j] ] ;
+         if( arr[j] == arr[j-1]) mp [ arr[j] ] = 1;
+
+    }
+    int arr2[m];
+    for( int i =1; i< n ; i++){
+
+        cin>>arr2[0];
+        mp[ arr2[0] ];
+
+        if(arr[0] == arr2[0] && mp[ arr2[0] ]!= 1 )
+                                            mp [ arr2[0] ] = 1;
+            arr[0]= arr2[0];
+        for( int j =1; j<m ; j++ ){
+                            cin>>arr2 [ j];
+                             mp [ arr2[j] ];
+                             if( arr2[j] == arr[j-1] || arr2[j] == arr[j])
+                                    if( mp[ arr2[j] ] != 1)
+                                    mp [ arr2[j] ] = 1;
+
+            arr[j]= arr2[j];
+
+        }
+    }
+    int sum = 0;
+    bool chak = false;
+    map< int , int > :: iterator it = mp.begin();
+    while( it != mp.end()){
+        if( it->second == 0)sum ++;
+        else {
+            sum+=2;
+            chak = true;
+        }
+        it++;
+    }
+    if( chak) sum -=2;
+    else sum--;
+
+    cout<<sum<<"\n";
+  }
+}
