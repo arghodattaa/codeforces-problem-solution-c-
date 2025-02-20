@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te; cin>>te;
+   while( te-- ){
+    int n , m , k;
+    cin>> n >> m >> k;
+    string s;
+    cin>>s;
+    int l = 0, r =0;
+    int chak = 0;
+    int ans = 0;
+    for( int i =0; i< n ; i++){
+        if(s[i]=='1')
+                chak = 0;
+        else
+            chak ++;
+
+        if( chak == m){
+
+            ans++;
+            i = i+ (k-1) ;
+            chak = 0;
+        }
+    }
+    cout<<ans<<"\n";
+   }
+}
