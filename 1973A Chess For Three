@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<bits/stdc++.h>
+int main(){
+   int te; cin>>te;
+   while(te--){
+      vector< int > vc(3);
+      cin>>vc[0]>>vc[1]>>vc[2];
+      sort( vc.begin(), vc.end());
+
+
+      if( vc[0] ==0 &&  vc[1] ==0 && vc[2] == 0){
+            cout<<0<<"\n";
+      }
+
+     else{
+
+                int ans = 0;
+                while( vc[1] != 0){
+                    vc[2]--;
+                    vc[1]--;
+                    ans++;
+                sort( vc.begin(), vc.end());
+                }
+                if( vc[2] %2 ==0)
+                             cout<<ans<<"\n";
+                else
+                    cout<<-1<<"\n";
+
+      }
+   }
+}
