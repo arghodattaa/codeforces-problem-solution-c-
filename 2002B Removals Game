@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te; cin>>te;
+   while( te--){
+    int n ; cin>>n ;
+    int arr[n];
+    for( int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    int a;
+    bool chak = true;
+    cin>>a;
+    if( arr[0]==a){
+    for( int i =1; i<n ; i++){
+        cin>>a;
+        if( arr[i] != a )chak = false;
+
+        }
+    }else if( arr[n-1]== a){
+        for( int i =1; i<n ; i++){
+        cin>>a;
+        if( arr[n-1 - i] != a )chak = false;
+
+        }
+    }else{
+        chak = false ;
+          for( int i =1; i<n ; i++)
+                                  cin>>a;
+    } 
+
+    if( chak) cout<<"Bob\n";
+    else cout<<"Alice\n";
+   }
+}
