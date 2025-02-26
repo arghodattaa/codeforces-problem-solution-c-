@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int te; cin>>te;
+    while(te--){
+        int n , k, p;
+        cin>>n>>k>>p;
+        if( k == 0){
+            cout<<0<<"\n";
+            continue;
+        }
+        if( k<0) k *= -1;
+        int min_x = k /p;
+        if( min_x*p !=k) min_x++;
+        if( n< min_x)cout<<-1;
+        else cout<<min_x;
+        cout<<"\n";
+    }
+
+}
