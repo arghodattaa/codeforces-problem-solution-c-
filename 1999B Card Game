@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main(){
+  int te; cin>>te;
+  while( te--){
+    int a1, a2, b1, b2;
+    cin>>a1>>a2>>b1>>b2;
+
+    int count_win = 0;
+    int arr1[4][2]={ a1, a2, a1, a2, a2, a1, a2, a1};
+    int arr2[4][2]={ b1, b2, b2, b1, b1, b2, b2, b1};
+   for( int i =0; i<4; i++){
+        int person_1 = 0;
+        int person_2 = 0;
+        if( arr1[i][0] > arr2[i][0]) person_1 ++;
+        if( arr1[i][0] < arr2[i][0]) person_2 ++;
+
+        if( arr1[i][1] > arr2[i][1]) person_1 ++;
+        if( arr1[i][1] < arr2[i][1]) person_2 ++;
+
+        if( person_1 > person_2)count_win ++;
+   }
+   cout<<count_win<<"\n";
+  }
+
+}
