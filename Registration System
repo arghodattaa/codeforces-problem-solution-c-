@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+#include<map>
+int main(){
+    int n ; cin>>n ;
+    map< string , int >mp;
+    string s;
+    while( n--){
+           cin>>s;
+           if( mp[s]==0){
+                cout<<"OK\n";
+                mp[s]++;
+           }
+           else {
+
+            cout<<s<<mp[s]<<"\n";
+             mp[s]++;
+           }
+    }
+
+}
