@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+   int te ; cin>>te;
+   while( te --){
+       int n, m ;
+       cin>>n>>m;
+       int arr[n][m];
+       for( int i = 0; i<n ; i++){
+        for( int j= 0; j<m ; j++){
+           cin>> arr[i][j];
+        }
+       }
+
+        for( int i = 0; i<n ; i++){
+        for( int j= 0; j<m ; j++){
+          vector< int >vc;
+           if( i-1>=0) vc.push_back(arr[i-1][j]);
+
+
+           if( i+1 <n) vc.push_back(arr[i+1][j]);
+
+
+           if( j-1 >= 0) vc.push_back(arr[i][j-1]);
+
+
+           if( j+1 < m)  vc.push_back(arr[i][j+1]);
+
+           int xx = *max_element( vc.begin(),vc.end());
+
+           if( arr[i][j]> xx) arr[i][j]=xx;
+        }
+       }
+
+        for( int i = 0; i<n ; i++){
+        for( int j= 0; j<m ; j++){
+        cout<<arr[i][j]<<" ";
+        }
+        cout<<"\n";
+       }
+   }
+}
