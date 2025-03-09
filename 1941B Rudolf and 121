@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int main(){
+  int te ; cin>>te ;
+  while (te --){
+    int n ; cin>>n ;
+    int arr[n];
+    cin>>arr[0];
+    int stor = 0;
+    int stor_2=arr[0];
+    bool chak = true;
+    for( int i = 1; i<n-2 ; i++){
+        cin>>arr[i];
+        arr[i]-= stor;
+        arr[i] -=stor_2 *2;
+        stor_2 = arr[i];
+        stor = arr[i-1];
+        if( arr[i]< 0)chak = false ;
+
+    }
+    cin>>arr[n-2];
+    arr[n-2]-=stor;
+    arr[n-2] -= stor_2 *2;
+    stor = arr[n-3];
+
+    if( arr[n-2] != 0) chak = false;
+    cin>> arr[n-1];
+    arr[n-1] -= stor;
+    if( arr[n-1] !=  0) chak = false;
+
+     if( chak ) cout <<"YES\n";
+     else cout<<"NO\n";
+  }
+}
