@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<algorithm>
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+   int te; cin>>te;
+   while( te--){
+    vector<int> vc(3);
+    cin>>vc[0]>>vc[1]>>vc[2];
+    sort(vc.begin(), vc.end());
+    cout<<(vc[1]-vc[0])+ (vc[2]-vc[1])<<"\n";
+
+   }
+}
