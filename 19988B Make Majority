@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te ; cin>>te ;
+   while( te--){
+        int n ; cin>>n ;
+      string s ;
+      cin>>s;
+   int coun_0 = 0 , coun_1 = 0;
+   int chak = 1;
+   for( int i = 0; i<n ; i++){
+      if( s[i] == '1'){
+         chak = 1;
+         coun_1 ++;
+      }
+      if( s[i] == '0' && chak == 1){
+            coun_0 ++;
+            chak = 0;
+      }
+   }
+   if( coun_1 > coun_0)cout<<"Yes\n";
+   else cout<<"No\n";
+   }
+}
