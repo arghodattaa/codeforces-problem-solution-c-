@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main(){
+     int te ; cin>>te;
+     while( te--){
+        int n , m , q;
+        cin>>n>>m>>q;
+     int m1, m2;
+     cin>>m1>>m2;
+     int q1;
+     cin>>q1;
+        if( max(m1,m2) < q1){
+            cout<< n-max(m1,m2)<<"\n";
+
+        }else if( min( m1,m2) > q1){
+            cout<<min(m1,m2) -1<<"\n";
+
+        }else if ( m1 == q1 || m2 == q1){
+            cout<<0<<"\n";
+        }else{
+              int xx = abs( m1-m2)-1;
+              if( xx %2 ==0 ){
+                   cout<<xx/2<<"\n";
+              }
+              else cout<<xx/2 +1<<"\n";
+
+        }
+     }
+}
