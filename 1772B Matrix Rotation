@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int te; cin>>te;
+   while(te--){
+       int beg = 0; 
+       int begi = 0, begj = 0;
+       int sml = 200;
+       int smli= 0, smlj = 0 ;
+       int arr[2][2];
+       for( int i = 0; i<2; i++)
+       for( int j = 0; j<2; j++){
+         cin>>arr[i][j];
+         if(beg < arr[i][j]){
+              beg = arr[i][j];
+              begi =i;
+              begj =j;
+              
+         }
+         if( sml > arr[i][j]){
+             sml = arr[i][j];
+             smli = i;
+             smlj = j;
+         }
+       }// cin loop
+       if(smli == 0 && smlj == 0){
+           if( begi == 1 && begj == 1) cout<<"YES\n";
+           else cout <<"NO\n";
+       }else if( smli == 0 && smlj == 1){
+           if( begi == 1 && begj == 0)cout<<"YES\n";
+           else cout<<"NO\n";
+       }else if( smli ==1 && smlj==0){
+           if(begi == 0 && begj == 1)cout<<"YES\n";
+           else cout<<"NO\n";
+       }else {
+           if(begi == 0 && begj == 0) cout<<"YES\n";
+           else cout<<"NO\n";
+       }
+         
+   }//while loop
+   
+}//main
