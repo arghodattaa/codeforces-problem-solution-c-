@@ -1,0 +1,27 @@
+
+
+#include<iostream>
+using namespace std;
+bool solv( string s1, string  s2){
+   bool chak = true;
+   int sn = s1.size();
+   for( int i = 1; i<sn; i++){
+        if( s1[i] != s2[i]) chak = false ;
+      if( chak)
+        if( s1[i] == '1' && s2[i] =='1')  return true;
+      if( !chak) {
+        if( s1[i] == '0' && s2[i] == '0') chak = true;
+      }
+   }
+   return false;
+}
+int main( ){
+   int te;cin>>te;
+   while( te--){
+    string s1, s2;
+    cin>>s1>>s2;
+
+    if( solv(s1, s2)) cout<<"YES\n";
+    else cout<<"NO\n";
+   }
+}
