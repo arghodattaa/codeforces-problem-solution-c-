@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int solv( int n, int m){
+    if( n == m) return 1;
+  if( n<3) {
+    if( n == m ) return 1;
+    else return 0;
+  }
+   if( n%3 != 0) return 0;
+
+  int  a = solv( 2*(n/3), m) + solv( n/3, m);
+  //chak[2*(n/3)]
+  return a;
+}
+int main(){
+ int te ; cin>>te ;
+ while( te--){
+    int n , m;
+    cin>>n>>m;
+    //vector<int> chak(n+1, 0);
+    if( solv( n, m ) == 0 ) cout<<"NO\n";
+    else cout<<"YES\n";
+ }
+}
