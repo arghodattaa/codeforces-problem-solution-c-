@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te ; cin>>te ;
+   while( te --){
+      int n , k ;
+      cin>>n>>k;
+      if( k%2 == 0){
+        for( int i = 1; i<= n ; i++){
+           if( i != n-1 ) cout<<n-1<<" ";
+           else  cout<<n<<" ";
+        }
+      }else {
+           for( int i = 1; i<= n ; i++){
+               if( i == n ) cout<<n-1<<" ";
+               else cout<<n<<" ";
+        }
+      }
+    cout<<"\n";
+   }
+
+}
