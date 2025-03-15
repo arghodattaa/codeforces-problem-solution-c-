@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int solv( int a , int b , int c ){
+  if( b == c)return 1;
+
+  int aa  = abs( b - c);
+  if( aa%2 == 0)
+             return 1;
+  
+    return 0;
+}
+int main(){
+   int te ; cin>>te ;
+   while( te --){
+    int a , b , c ;
+    cin>>a >>b>>c;
+    int ansa, ansb, ansc;
+    if( a == b && b == c){
+        ansa = 1;
+        ansb = 1;
+        ansc = 1;
+
+    }else{
+        ansa = solv( a, b , c);
+        ansb = solv( b, a, c);
+        ansc = solv( c, a, b);
+    }
+    cout<<ansa<<" "<<ansb<<" "<<ansc<<"\n";
+   }
+}
