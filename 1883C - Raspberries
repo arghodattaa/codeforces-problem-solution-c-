@@ -1,0 +1,51 @@
+#include<iostream>
+#include<limits.h>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+   int te ; cin>>te ;
+   while ( te --){
+     int n ; cin>>n ;
+     int k ; cin>> k ;
+     int ans = INT_MAX;
+     int a;
+     int number;
+     bool chak = true;
+     int temp ;
+     if( k == 4){
+            int k4 = 0;
+             for( int i =0; i<n ; i++){
+          cin>>a;
+          if( a%4 == 0) ans = 0;
+         if( a%2 == 0) k4 ++;
+         number = a/k +1;
+          temp = number*k - a;
+          if( temp < ans ) ans = temp;
+     }
+     if( ans != 0)
+     if( k4 >=2)ans = 0;
+     else {
+            temp = 2 -k4;
+            if( temp < ans ) ans = temp;
+
+     }
+     }else{
+     for( int i =0; i<n ; i++){
+          cin>>a;
+          if( !chak )continue;
+          if( a%k == 0 && chak ){
+            ans = 0;
+            chak = false ;
+          }
+          number = a/k +1;
+          temp = number*k - a;
+          if( temp < ans ) ans = temp;
+
+
+     }
+     }
+     cout<<ans<<"\n";
+   }
+}
+
