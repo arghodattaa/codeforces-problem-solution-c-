@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main(){
+  int te ; cin>>te ;
+  while( te--){
+    int n; cin>>n;
+    int ans  ;
+    cin>>ans;
+    int a ;
+    for( int i = 0; i<n-1 ;i++){
+        cin>>a;
+        ans += a-1;
+    }
+    cout<<ans<<"\n";
+  }
+}
