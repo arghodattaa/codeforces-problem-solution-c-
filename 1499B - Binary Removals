@@ -1,0 +1,72 @@
+#include<iostream>
+using namespace std;
+bool find00( string s, int i){
+    int si = s.size()-1 ;
+      for( ++i; i<si; i++ ){
+            if( s[i] == '0' && s[i+1] == '0') return true;
+      }
+      return false;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+  int te ; cin>>te;
+  while( te--){
+    string s ;
+    cin>>s;
+    int si = s.size();
+    if( s[0] == '1'){
+        if( !find00(s,0)) {
+                cout<<"YES\n";
+                continue;
+        }
+    }
+     if( s[0] == '0'){
+            bool chak = false;
+            bool chak3 = true;
+        for( int i = 1 ; i<si-1; i++ ){
+            if( s[i] == '1' && s[i+1] == '1'){
+                    chak3 = false;
+                if( !find00(s, i+1) ){
+                    cout<<"yes\n";
+                    chak = true;
+                    break;
+                }else break;
+            }
+        }
+
+        if( chak) continue;
+        if( chak3){
+            cout<<"YES\n";
+            continue;
+        }
+    }
+    if( s[1] == '1'){
+         if( !find00(s,1)) {
+                cout<<"YES\n";
+                continue;
+        }
+    }
+    if( s[1] == '0'){
+         bool chak2 = false;
+         bool chak3 = true;
+        for( int i = 2 ; i<si-1; i++ ){
+            if( s[i] == '1' && s[i+1] == '1'){
+                    chak3 = false;
+                if( !find00(s, i+1) ){
+                    cout<<"YES\n";
+                    chak2 = true;
+                    break;
+                }else break;
+
+            }
+        }
+        if( chak2) continue;
+        if( chak3 ) {
+                cout<<"YES\n";
+                continue;
+        }
+    }
+    cout<<"NO\n";
+  }
+}
