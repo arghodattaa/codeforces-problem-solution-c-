@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+ int n ;
+  int  solv( string s1, string s2, int i){
+       for( ++i; i<n; i++){
+          if( s1[i] == '0' || s2[i] == '0') return i;
+       }
+       return -1;
+   }
+   int solv2( string s1, string s2, int i){
+        for( ++i; i<n; i++){
+            if( s1[i] == '0' || s2[i] == '0') return i;
+            if( i == n-1) return i;
+        }
+
+        return -1;
+   }
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+   int te ; cin>>te ;
+   while( te--){
+     cin>>n ;
+     string s1, s2;
+     cin>>s1>>s2;
+     int i = 0;
+     int ans  = 0;
+
+     while( i<n){
+           bool chak5 = false;
+            if( i < n-1) chak5 = s1[i+1]=='1' && s2[i+1] == '1';
+
+        if( s1[i] == '1' && s2[i] == '1'){ //if 1 or 1
+             if( s1[i+1] == '0' && s2[i+1] == '0'){
+                 ans+=2;
+                 i+=2;
+                 continue;
+             }
+
+        }
+        else if( s1[i] == '0' && s2[i] == '0'){
+            if(s1[i+1] == '1' && s2[i+1] == '1' ){
+                 ans+=2;
+                 i+=2;
+                 continue;
+            }else ans++;
+        }
+        //else if( s1[i] == '1' || s2[i] == '1') ans+= 2;//if 0 or 1
+        else  ans+=2;
+
+        i++;
+     }
+     cout<<ans<<"\n";
+   }
+
+}
