@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+   int te; cin>>te;
+   while( te--){
+    int n, m ;
+    cin>>n>>m;
+    string arr[n];
+    bool chak1 = true;
+    //bool chak2 =  true;
+    for( int i = 0; i<n ;i++){
+            cin>>arr[i];
+      if( chak1){
+          for( int j = 0; j<m; j++){
+                    bool chakj = true;
+                    bool chaki = true;
+            if( arr[i][j] == '1'){
+                    int jj = j;
+
+                while( --jj>= 0){
+                    if( arr[i][jj] != '1'){
+                            chakj = false;
+                        break;
+                    }
+                }
+                int ii = i;
+                while(--ii>=0){
+                    if( arr[ii][j] != '1'){
+                        chaki = false;
+                        break;
+                    }
+                }
+            }
+           if( !chaki && !chakj) chak1 = false;
+          }
+      }
+
+    }
+    if( chak1 ) cout<<"YES\n";
+    else cout<<"NO\n";
+   }
+}
