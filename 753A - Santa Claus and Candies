@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+#include<vector>
+
+int main(){
+  long long  n ; cin>>n;
+   vector<int>vc;
+   long long  sum  = 0, i = 1, ans = 0;
+
+   while( sum+i<=n){
+    ans++;
+    vc.push_back(i);
+    sum+=i;
+    i++;
+   }
+   if( sum < n ) vc[ans-1] += n-sum;
+   cout<<ans<<"\n";
+   for( int i =0; i<ans; i++){
+    cout<<vc[i]<<" ";
+   }
+
+}
