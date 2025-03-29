@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+  int te; cin>>te;
+  while(te--){
+    int n , k;
+    cin>>n>>k;
+    string s;
+    cin>>s;
+    if( n == 1){
+        cout<<"NO\n";
+        continue;
+    }
+    if( k == 0){
+            int nn = n/2;
+            bool chak = true;
+        for( int i = 0; i<= nn; i++){
+            if( s[i] < s[n-1-i]){
+                    cout<<"YES\n";
+                    chak = false ;
+                   break;
+            }
+            else if( s[i] > s[n-1-i]){
+                cout<<"NO\n";
+                chak = false ;
+                break;
+            }
+        }
+        if( chak ) cout<<"NO\n";
+    }else{
+        bool chak = false;
+         for( int i = 1; i<n ; i++){
+            if( s[0] != s[i]) {
+                chak = true;
+                break;
+            }
+         }
+         if( chak )cout<<"YES\n";
+         else cout<<"NO\n";
+    }
+  }
+}
