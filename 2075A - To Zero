@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te;
+   cin>>te;
+   while( te--){
+      int n , k;
+      cin>>n>>k;
+      if( n%2 == 0){//if n = 2
+        if(k%2 == 0){ // if k = 2 and n = 2
+            if(n%k == 0) {
+                cout<<n/k<<"\n";
+            }
+            else{
+                cout<<(n/k )+1<<"\n";
+            }
+        }else{//if k = 3 && n = 2
+
+            int kk = k -1;
+
+             if(n%kk == 0) {
+                cout<<n/kk<<"\n";
+            }
+            else{
+                cout<<(n/kk )+1<<"\n";
+            }
+
+        }
+      }else{ // if n = 3
+          if( k%2 !=0){ //if n = 3 && k = 3
+             int nn = n - k;
+             int kk = k-1;
+             if( nn%kk == 0) cout<<(nn/kk) +1<<"\n";
+             else cout<<(nn/kk) +2<<"\n";
+          }
+          else{ //n = 3 && k = 2
+            int nn = n - k-1;
+            if( nn%k == 0)cout<<(nn/k) +1<<"\n";
+            else cout<<(nn/k) +2<<"\n";
+
+          }
+      }
+   }
+}
