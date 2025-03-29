@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+    int nn = 0;
+int count01( string s, int i){
+
+     bool chak0 = true;
+     bool chak1 = false;
+     int op = 0;
+    for( ++i; i<nn; i++){
+        if( s[i] == '0' && chak0 ){
+            op++;
+            chak0 = false;
+            chak1 = true;
+           // cout<<" I0 = "<<i<<"\n";
+        }
+        else if( s[i] == '1' && chak1 ){
+            op++;
+            chak1 = false;
+            chak0  =true;
+           // cout<<" I1 = "<<i<<"\n";
+        }
+    }
+    return  op;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int te; cin>>te ;
+    while( te--){
+            cin>>nn;
+        string s;
+        cin>>s;
+
+        bool chak = true;
+        int ans = 0;
+        for( int i = 0; i<nn; i++){
+            if( s[i] == '1'){
+              ans =   count01( s, i);
+              break;
+            }
+        }
+        cout<<ans<<"\n";
+    }
+}
