@@ -1,0 +1,54 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+   ios_base::sync_with_stdio(false);
+    cin.tie(0);
+  int te; cin>>te;
+  while( te--){
+      int n ; cin>>n;
+      int a;
+      int count_0 = 0;
+      vector<int>vc;
+      for( int i = 1; i<=n; i++){
+        cin>>a;
+        if( a == 0){
+            count_0 ++;
+            vc.push_back(i);
+        }
+      }
+      if( count_0 == 0){
+        cout<<1<<"\n";
+        cout<<1<<" "<<n<<"\n";
+      }
+      else if( count_0 == 1){
+        cout<<2<<"\n";
+        if( vc[0] == n){
+            cout<<n-1<<" "<<n<<"\n";
+            cout<<1<<" "<<n-1<<"\n";
+        }
+        else {
+            cout<<vc[0]<<" "<<vc[0]+1<<"\n";
+             cout<<1<<" "<<n-1<<"\n";
+        }
+
+      }
+      else{
+            int si = vc.size();
+            if(vc[0] !=1 || vc[si-1] != n){
+                cout<<2<<"\n";
+                cout<<vc[0]<<" "<<vc[si-1]<<"\n";
+                int nn = n - (vc[si-1] - vc[0] +1 ) +1;
+                cout<<1<<" "<<nn<<"\n";
+            }
+            else if( vc[0] == 1 && vc[si-1] == n){
+                    cout<<3<<"\n";
+                cout<<1<<" "<<n/2<<"\n";
+                int fn = n - n/2 +1;
+                cout<<2<<" "<<fn<<"\n";
+                cout<<1 <<" "<<2<<"\n";
+            }
+
+      }
+  }
+}
