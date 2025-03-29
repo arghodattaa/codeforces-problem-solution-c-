@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+#include<cmath>
+int solv(){
+
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int te; cin>>te;
+    while(te--){
+        long long  n,m,k;
+        cin>>n>>m>>k;
+      long long  b = ((n*m - k)/n );
+        long long  c = ceil((m-b)*1.0/(b+1) ) ;
+       cout<<c<<"\n";
+
+
+    }
+}
