@@ -1,0 +1,12 @@
+#include<iostream>
+using namespace std;
+int main(){
+  long long  n,m,a;
+   cin>>n>>m>>a;
+  long long  ans = 0;
+   ans += m/a;
+   if( m%a != 0) ans ++;
+  long long  temp = n /a;
+   if( n%a != 0)  temp++;
+   cout<<ans*temp;
+}
