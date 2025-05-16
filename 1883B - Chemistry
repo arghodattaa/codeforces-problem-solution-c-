@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+  int te; cin>>te;
+  while(te--){
+    int n, k;
+    cin>>n>>k;
+    string s;
+    cin>>s;
+    map< char, int>mp;
+    if( n == 1 || n-k == 1 ){
+        cout<<"YES\n";
+        continue;
+    }
+    for( int i = 0; i<n; i++){
+        mp[s[i]]++;
+    }
+    int a = 0;
+    for( auto x : mp){
+        if( (x.second) %2 != 0)a++;
+       // else b++;
+    }
+    int b = n-k;
+    if( k <= a ){
+        if( a-k >1)cout<<"NO\n";
+        else cout<<"YES\n";
+    }
+    else {
+            cout<<"YES\n";
+           continue;
+        /*int xy = n-a;
+        int kk = k-a;
+        if( xy%2 == 0 && kk%2 == 0)cout<<"YES\n";
+        else if( xy%2 != 0 && kk%2 != 0)cout<<"YES\n";
+        else cout<<"NO\n";*/
+
+    }
+
+  }
+}
