@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+#define ll long long
+#include<bits/stdc++.h>
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
+   int te; cin>>te;
+   while(te--){
+    ll x, n;
+    cin>>x>>n;
+    bool chak = false;
+    if( x%2 == 0) chak = true;
+    ll a = 0, an = 0;
+    //1 5 9 13 AP
+    an = ceil(n/4.0) ;
+
+    a = an*(  1 + (an-1)* 2);
+    if( chak )
+           x -= a;
+    else
+        x += a;
+
+    //4 8 12 16  AP
+    an = n/4;
+    a = an*( 4+ (an-1)*2 ) ;
+    if( chak )
+           x -= a;
+    else
+       x+= a;
+
+    //-2 - 6 - 10 AP
+    ll temp = n;
+    while( temp%4 !=2 && temp>0){
+        temp--;
+    }
+    if( temp == 0) an = 0;
+    else{
+        an =( (temp - 2) /4 ) +1;
+    }
+
+    a = an*( 2 + (an-1)*2 );
+    if( chak ) x += a;
+    else
+       x -=a;
+
+    //-3 - 7 - 11 -15 AP
+    temp = n;
+    while( temp%4 != 3 && temp>0){
+        temp--;
+    }
+    if( temp == 0) an = 0;
+    else {
+        an = (( temp - 3) / 4 )+1;
+    }
+    a = an*( 3  + ( an-1)*2 ) ;
+    if( chak ) x += a;
+    else
+       x -= a;
+    cout<<x<<"\n";
+
+   }
+}
