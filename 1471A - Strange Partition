@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+#define ll long long 
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int te; cin>>te;
+    while( te--){
+      ll n, x;
+        cin>>n>>x;
+       ll   mx = 0;
+        long long m = 0;
+        ll  a;
+
+        for( int i = 0; i<n; i++){
+            cin>>a;
+            mx += ceil(a/(x *1.0) );
+           m += a;
+        }
+        m = ceil( m/( x*1.0 ) ) ;
+        cout<<m<<" "<<mx<<"\n";
+    }
+}
