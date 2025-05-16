@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+#include<map>
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int te; cin>>te;
+    int n, p;
+    while(te--){
+        cin>>n>>p;
+        int a[n];
+        for( int i = 0; i<n; i++){
+            cin>>a[i];
+        }
+        multimap<int ,int >mp;
+        int b;
+        for( int i = 0; i<n; i++){
+            cin>>b;
+            mp.insert({ b , a[i] });
+        }
+        auto it = mp.begin();
+        long long  ans = p;
+        n--;
+        bool chak = false;
+        while( n>0){
+                long long ll ;
+                if( it->first > p) chak = true;
+                if( chak ){
+                        ll = n;
+                    ans += ( ll*p);
+                    break;
+                }else{
+                    ll  = min(it->second, n);
+                    ans += ll* it->first;
+                    n -= min(it->second, n);
+                }
+
+            it++;
+        }
+        cout<<ans<<"\n";
+
+    }
+}
