@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+      int te ; cin>>te;
+      while(te--){
+          int n , x;
+          cin>>n>>x;
+          int a[n];
+          int ans ;
+          cin>>a[0];
+           ans = a[0];
+          for( int i = 1; i<n; i++){
+              cin>>a[i];
+
+                  int temp =(a[i]-a[i-1]);
+
+                  if( ans < temp) ans =temp;
+
+          }
+          if((x-a[n-1])*2 > ans ) ans = (x-a[n-1])*2;
+          cout<<ans<<"\n";
+}
+
+}
+
