@@ -1,0 +1,24 @@
+#include<iostream>
+#include<set>
+using namespace std;
+int main(){
+     int te; cin>>te;
+     while( te--){
+        int n; cin>>n;
+        string s;
+        cin>>s;
+        char a = s[0];
+        int temp = 1;
+        int ans  = 1;
+      
+        for( int i = 1; i<n; i++){
+            if( s[i] == s[i-1])temp++;
+            else{
+                temp = 1;
+            }
+            ans = max(ans,temp);
+
+        }
+        cout<<ans+1<<"\n";
+     }
+ }
