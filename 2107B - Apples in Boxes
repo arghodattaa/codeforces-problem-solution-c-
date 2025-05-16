@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+   int te; cin>>te;
+   while( te--){
+      int n, k;
+      cin>>n>>k;
+      int mx = INT_MIN;
+      int m = INT_MAX;
+      bool cmx = false;
+      int a = 0;
+      int sum = 0;
+      for( int i = 0; i<n; i++){
+        cin>>a;
+        sum+=a;
+
+        if( mx == a) cmx = true;
+        if(a> mx){
+            mx = a;
+            cmx = false;
+        }
+        if( a< m) m = a;
+      }
+      int aa = mx-m;
+
+      if( cmx && aa> k){
+        cout<<"Jerry\n";
+        continue;
+      }
+      if( aa>k+1){
+         cout<<"Jerry\n";
+        continue;
+      }
+
+
+      if( sum %2 == 0){
+        cout<<"Jerry\n";
+        continue;
+      }
+      else {
+        cout<<"Tom\n";
+        continue;
+      }
+
+
+   }
+}
