@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+#define l long long
+int main(){
+  int te; cin>>te;
+  l a,b;
+
+  while(te--){
+        cin>>a>>b;
+    if( a == b){
+        cout<<0<<" "<<0<<"\n";
+        continue;
+    }
+
+    l aa = max( a,b);
+    l bb = min( a,b);
+    aa -= bb;
+
+            l a1 = bb%aa;
+            l a2 = aa-a1;
+            cout<<aa<<" "<<min(a1,a2)<<"\n";
+
+
+  }
+}
