@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main(){
+  int te; cin>>te;
+  while( te--){
+    int n, m, l, r;
+    cin>>n >>m >>l >>r;
+    int a, b;
+
+    a = min(r,m);
+    m-=a;
+    b = min( -1*l, m);
+    cout<<-1*b<<" "<<a<<"\n";
+
+  }
+}
