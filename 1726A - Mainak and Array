@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main(){
+    int te; cin>>te;
+      int n , l ,r;
+
+    while(te--){
+      cin>>n;
+       int a[n];
+      cin>>a[0];
+      l = a[0];
+      r = a[0];
+      int d = INT_MIN;
+      int dd = d;
+      for( int i = 1;i<n;i++){
+        cin>>a[i];
+ 
+        if((a[i] - a[0]) > d) d = (a[i] - a[0]);
+        if( (a[i-1] -a[i]) > d ) d =(a[i-1] -a[i]);
+
+      }
+      if( n == 1){
+        cout<<0<<"\n";
+        continue;
+      }
+      for( int i = 0; i<n-1; i++){
+        if( a[n-1] - a[i] > d) d = a[n-1] - a[i] ;
+      }
+
+            cout<<d<<"\n";
+    }
+}
