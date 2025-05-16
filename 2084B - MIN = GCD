@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+#define ll long long
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+   int te; cin>>te;
+   while( te--){
+    ll n ; cin>>n;
+    ll a[n];
+    ll m = INT64_MAX;
+    ll mi = 0;
+    for( int i = 0; i<n; i++){
+        cin>>a[i];
+        if( m > a[i] ){
+            m = a[i];
+            mi = 0;
+
+        }
+        if( a[i] == m) mi ++;
+    }
+
+    if( mi>=2){
+            cout<<"Yes\n";
+            continue;
+    }
+    ll p = 0;
+    for( int i = 0; i<n; i++){
+        if( a[i] != m){
+            if( a[i] %m == 0){
+                p = __gcd(p,a[i]);
+            }
+        }
+    }
+    if( m == p)cout<<"Yes\n";
+    else cout<<"No\n";
+
+   }
+}
