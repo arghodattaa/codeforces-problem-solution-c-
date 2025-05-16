@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+#include<map>
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+   int te; cin>>te;
+   while( te--){
+    int n;cin>>n;
+    map<int ,int>mp;
+    int a;
+    int ai = 0;
+    for( int i = 0; i<n; i++){
+        cin>>a;
+        mp[a]++;
+        if( mp[a] >ai) ai = mp[a];
+    }
+    //cout<<ai<<" ai\n";
+    int ans = 0;
+    while(n-ai >0){
+        ans++;
+        int temp = min(n-ai,ai);
+        ans += temp;
+        ai += temp;
+
+    }
+    cout<<ans<<"\n";
+   }
+}
