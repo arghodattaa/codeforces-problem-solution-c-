@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+int qx, qy;
+int ans ;
+ int a,b;
+
+ void solv1( int x, int y, int xy){
+    if( xy == 3 ){
+        if( x == qx && y == qy){
+
+                ans++;
+               // cout<<"||";
+        }
+
+    }
+    if( xy>=3)return ;
+    solv1(x+a,y+b, xy+1);
+    solv1(x+a, y-b, xy+1);
+    solv1(x-a, y+b, xy+1);
+    solv1(x-a, y-b, xy+1);
+    //
+    if( a !=b){
+    solv1(x+b,y+a, xy+1);
+    solv1(x+b, y-a, xy+1);
+    solv1(x-b, y+a, xy+1);
+    solv1(x-b, y-a, xy+1);
+    }
+
+}
+void solv ( int x, int y, int xy){
+    if( xy == 1)solv1(x,y,xy+1);
+    if( xy >= 1) return;
+   solv(x-b,y-a, xy+1);
+   solv(x-b, y+a, xy+1);
+   solv( x+b, y-a, xy+1);
+   solv( x+b, y+a, xy+1);
+   //
+   if( a != b){
+   solv(x-a,y-b, xy+1);
+   solv(x-a, y+b, xy+1);
+   solv( x+a, y-b, xy+1);
+   solv( x+a, y+b, xy+1);
+   }
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+ int te; cin>>te;
+ while(te--){
+
+    cin>>a>>b;
+    int x,y;
+    cin>>x>>y;
+    cin>>qx>>qy;
+    ans = 0;
+    solv(x,y, 0);
+    cout<<ans<<"\n";
+ }
+}
