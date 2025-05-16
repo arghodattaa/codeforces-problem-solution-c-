@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main(){
+  int te; cin>>te;
+  string s;
+  int n;
+  while( te--){
+    cin>>s;
+    int ab = 0;
+    int ba = 0;
+    n = s.size();
+    s[0] = s[n-1];
+    cout<<s<<"\n";
+  }
+}
+
