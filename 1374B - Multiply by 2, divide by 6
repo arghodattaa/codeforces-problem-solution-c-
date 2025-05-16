@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+#define ll long long
+ll solv( ll n){
+   if( n == 1) return 0;
+   ll i = 2;
+   ll a = 0, b = 0;
+   while( n>1){
+    if( n%i == 0){
+        if( i == 2) a++;
+        else if( i == 3) b++;
+        n /= i;
+    }else i++;
+    if( i >3) break;
+   }
+   if( n >3 ) return -1;
+   if( n == 2) a++;
+   else if( n == 3) b++;
+  // cout<<" a, b "<<a<<"  " <<b <<"\n";
+   if( a>b ) return -1;
+   if( a == b) return b;
+   if( b > a) return b + b - a;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    int te; cin>>te;
+    while(te--){
+       ll n;
+       cin>>n;
+       ll ans = solv(n);
+       cout<<ans <<"\n";
+    }
+}
