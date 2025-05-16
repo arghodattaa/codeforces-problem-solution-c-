@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+#define l long long
+void solv (l a, l b, l c){
+     // ma b c
+    l am = b- (c-b) ;
+
+    if( am % a == 0 && am >a  && am !=0){
+        cout<<"YES\n";
+        return;
+    }
+     // a mb c
+    l bm = a+ (c-a)/2;
+
+    if( bm %b == 0 && bm !=0 && bm >= b && (c-a)%2 == 0 ){
+         cout<<"YES\n";
+        return;
+    }
+    // a b cm
+    l cm = (b-a) + b;
+    if( cm%c == 0 && cm !=0 && cm > c){
+        cout<<"YES\n";
+        return;
+    }
+    cout<<"NO\n";
+    return;
+
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
+  l te; cin>>te;
+  while(te--){
+    l a,b,c;
+    cin>>a>>b>>c;
+    solv ( a, b ,c);
+
+  }
+
+}
