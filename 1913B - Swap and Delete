@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<bits/stdc++.h>
+int main(){
+       ios_base::sync_with_stdio(false);
+       cin.tie(0);
+   int te; cin>>te;
+   string s;
+   while( te--){
+      
+      cin>>s;
+      int n  = s.size();
+
+      vector<int> vc(n,0);
+      int _0 = 0, _1 = 0;
+
+
+      for( int i = 0; i<n; i++ ){
+              if( s[i] == '0'){
+                    _0++;
+                    vc[i] = _0;
+              }
+               else{
+                    _1 ++;
+                    vc[i] = _1;
+               }
+
+      }
+
+        if( _0 == _1){
+        cout<<0<<"\n";
+        continue;
+      }
+      int chak1 = 0, chak2 = 0;
+      int ans =  min(_0,_1);
+
+       _1 = ans  ;
+      _0 =  ans ;
+      ans *=2;
+      int out0 = 0, out1 = 0;
+      int i = 0;
+       while(i<n){
+          if( s[i] == '0' ) {
+              if(  vc[i] > _0) break;
+               out0 = i;
+          }
+
+         if( s[i] == '1' ) {
+             if(  vc[i] > _1 ) break;
+               out1 = i;
+          }
+
+          i++;
+       }
+       out0 = max(out0, out1) +1;
+       ans = min(ans, out0);
+       cout<<n-ans <<"\n";
+
+
+
+
+   }
+}
