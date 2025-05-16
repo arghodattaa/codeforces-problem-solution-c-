@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+#define ll long long
+
+int main(){
+  ios_base::sync_with_stdio(false);
+  cin.tie(0);
+  int te; cin>>te;
+  int x,k;
+  while( te--){
+    cin>>x>>k;
+    if( k==2 && x==1){
+       cout<<"YES\n";
+    }
+    else if( k==1){
+        bool chak = true;
+        if( x == 1 ) chak = false;
+        for( int i=2; i*i<=x; i++){
+
+            if(x%i == 0){
+
+                chak = false;
+                break;
+            }
+        }
+        if( chak )cout<<"YES\n";
+        else cout<<"NO\n";
+    }
+    else cout<<"NO\n";
+  }
+}
