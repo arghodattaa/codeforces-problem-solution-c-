@@ -1,0 +1,27 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std ;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
+    int te; cin>>te;
+    while( te--){
+        int n, k;
+        cin>>n>>k;
+        int nn = n*k;
+        int a[nn +1];
+        for( int i = 1; i<= nn; i++){
+            cin>>a[i];
+        }
+
+        int l = n  - ceil(n/(2.0)) ;
+        int ll =( ceil(n/(2.0)) -1 ) * k;
+        long long ans = 0;
+        int ii = 1;
+        for( int i = nn-l; ii<=k; i -= l+1, ii++){
+            ans += a[i];
+        }
+        cout<<ans<<"\n";
+    }
+}
