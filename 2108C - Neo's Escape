@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+#include<algorithm>
+#include<bits/stdc++.h>
+bool comp ( pair<int , int> a, pair<int , int >b){
+return a.first > b.first;
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
+   int te; cin>>te;
+   while(te--){
+     int n;cin>>n;
+     int du = 0;
+
+     vector<pair<int,int>>vc;
+     int a = 0;
+     cin>>a;
+     vc.push_back({a,1});
+     int temp= 0;
+     for( int i = 2; i<=n; i++){
+        cin>>temp;
+        if(temp == a){
+                a = temp;
+                du++;
+                continue;
+        }
+         a = temp;
+         vc.push_back({a,i-du});
+     }
+
+     vector<int>chak(vc.size()+5, 0);
+
+   sort(vc.begin(),vc.end(), comp);
+
+   auto its = vc.begin();
+  /* while( its != vc.end()){
+      cout<<its->first<<"  "<< its->second<<"\n";
+      its++;
+   }*/
+   int ans = 0;
+   auto it = vc.begin();
+   while(it != vc.end()){
+      if(chak[it->second -1] == 1 || chak[it->second +1] == 1){
+        chak[it->second] = 1;
+      }
+      else{
+            ans ++;
+        chak[it->second] = 1;
+      }
+      it++;
+   }
+
+     cout<<ans<<"\n";
+   }
+}
