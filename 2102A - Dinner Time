@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te; cin>>te;
+   while( te--){
+    int n,m,p,q;
+    cin>>n>>m>>p>>q;
+    if( n%p == 0){
+        int temp = n/p;
+        if( temp*q == m)cout<<"YES\n";
+        else cout<<"NO\n";
+    }else {
+       cout<<"YES\n";
+    }
+   }
+}
