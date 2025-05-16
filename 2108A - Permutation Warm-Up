@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main(){
+   int te; cin>>te;
+   int n ;
+   while(te--){
+      cin>>n;
+      int r =  n/2;
+      int a = 2;
+      if( n%2 == 0) a = 1;
+      int sum = r*(a + (r-1)) ;
+       cout<<sum +1<<"\n";
+
+   }
+}
