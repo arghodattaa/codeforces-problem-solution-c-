@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+#include<algorithm>
+int main(){
+   int te; cin>>te;
+   while(te--){
+      int n;
+      cin>>n;
+     int a[n];
+     int c = 0;
+     for( int i = 0; i<n; i++){
+        cin>>a[i];
+        if(a[i] == 0) c++;
+     }
+     if( c== n){
+        cout<<0<<"\n";
+        continue;
+     }
+     if( c == 0){
+        cout<<1<<"\n";
+        continue;
+     }
+     int l = 0;
+     int r = n-1;
+     while( a[l] == 0 && l<n){
+        l++;
+     }
+     while( a[r] == 0 && r>=0){
+        r--;
+     }
+     bool chak = true;
+     for( int i = l; i<=r; i++){
+        if( a[i] == 0){
+            chak = false;
+            break;
+        }
+     }
+     if( chak )cout<<1;
+     else cout<<2;
+     cout<<"\n";
+
+   }
+
+
+
+}
