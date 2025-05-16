@@ -1,0 +1,31 @@
+#include<iostream>
+#define ll long long
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+      int te ; cin>>te;
+      while( te--){
+
+            ll n ;
+            cin>>n;
+            if( n%2 != 0 || n<4){
+                cout<<-1<<"\n";
+                continue;
+            }
+            ll a = 0, b = 0;
+            ll temp = n;
+            while( temp %6 != 0){
+                temp -=4;
+                a++;
+            }
+            a += temp/6;
+            temp = n;
+            while(temp%4 != 0){
+                temp -= 6;
+                b++;
+            }
+            b += temp/4;
+            cout<<a<<" "<<b<<"\n";
+      }
+}
